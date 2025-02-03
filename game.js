@@ -1,6 +1,6 @@
 
 
-/* function to randomly get the computers choice */
+/* function to randomly get the computers choice 
 const min = 0
 const max = 3
 
@@ -27,17 +27,21 @@ const max = 3
             console.log("scissors");
 
         } 
+
 /* function to get human choice */
 
-    function gethumanChoice()
-           { 
-            humanchoice = prompt("Rock, Paper or Scissors?");
-            if (humanchoice === 'rock' || humanchoice === 'paper' || humanchoice === 'scissors')
-                return console.log(humanchoice.toLowercase)
-            else 
-                return console.log("Please choose Rock, Paper or Scissors")
-            
-           }   
+function gethumanChoice()
+{ 
+let humanchoice = prompt("Rock, Paper or Scissors?");
+if (humanchoice === 'rock' || humanchoice === 'paper' || humanchoice === 'scissors')
+      {console.log(humanchoice.toLowerCase());}
+ else 
+      {prompt("Please choose Rock, Paper or Scissors");}
+ 
+}   
+
+gethumanChoice()
+
             
     
 
