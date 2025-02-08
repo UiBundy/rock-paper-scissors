@@ -1,67 +1,94 @@
 
+
+let humanScore = 0
+let computerScore = 0
+
+
+
 /* function to get human choice */
 
 function gethumanChoice()
 { 
+;
     let humanchoice = prompt("Rock, Paper or Scissors?");
     if (humanchoice === 'rock' || humanchoice === 'paper' || humanchoice === 'scissors')
-        {console.log(humanchoice.toLowerCase());}
+    return (humanchoice.toLowerCase());
     else 
-        {prompt("Please choose Rock, Paper or Scissors");}
+    return gethumanChoice();
 
 }   
 
 
 
 
-/* function to randomly get the computers choice */
-let humanScore = 0
-let computerScore = 0
+/* function to randomly get the computers choice 
+function getComputerChoice(min, max) 
+    {
+       const minCeiled =  Math.ceil(min);
+       const maxFloored = Math.floor(max);
+       
+        Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled) 
+
+        if (getComputerChoice(min, max) == 0)
+        {
+           return "rock";
+        }
+        else if (getComputerChoice(min, max) > 0)
+        {
+           return "paper";
+        }
+        else 
+        {
+           return "scissors";
+
+        } 
+    }*/
 
 
 const min = 0
-const max = 3
+const max = 1
 
 
     function getComputerChoice(min, max) 
     {
        const minCeiled =  Math.ceil(min);
        const maxFloored = Math.floor(max);
-       
-       return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled) 
-       
-    }
 
-        if (getComputerChoice(min, max) == 0)
+       let randomChoice = Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled) 
+
+        if (randomChoice === 0)
         {
-            console.log("rock");
+           return "rock";
         }
-        else if (getComputerChoice(min, max) > 0)
+        else if (randomChoice === 1)
         {
-            console.log("paper");
+           return "paper";
         }
         else 
         {
-            console.log("scissors");
-
+           return "scissors";
         } 
-
+    }
+/* function to play a round */
 
     function playRound(humanChoice, computerChoice)
     {   
-        let gethumanChoice = humanChoice;
-        let getComputerChoice = computerChoice;
-
+        gethumanChoice();
+        getComputerChoice();
+        
+        
         if (humanChoice === computerChoice)
-            {console.log("TIE!");}
+           return console.log("TIE!");
         else if (humanChoice === 'rock' && computerChoice === 'scissors' || humanChoice === 'paper' && computerChoice === 'rock' || humanChoice === 'scissors' && computerChoice === 'paper')
-            {console.log("CONGRATULATIONS YOU WIN");}
+           return console.log("CONGRATULATIONS YOU WIN");
         else 
-            {console.log("YOU LOSE!");}
+           return console.log("YOU LOSE!");
         
     }
 
-    playRound(humanChoice, computerChoice)
+
+    playRound();
+    
 
     
             
